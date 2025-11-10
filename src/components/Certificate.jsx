@@ -8,127 +8,97 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
+import CertificatesData from "../data/CertificatesData";
 
-const Certificate = ({ ImgSertif }) => {
+const Certificate = () => {
   const [open, setOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  const handleOpen = () => setOpen(true);
+  const handleOpen = (image) => {
+    setSelectedImage(image);
+    setOpen(true);
+  };
+
   const handleClose = () => setOpen(false);
 
   return (
-    <Box sx={{ width: "100%" }}>
-      {/* Thumbnail Image */}
+    <Box sx={{ width: "100%", textAlign: "center", mt: 4 }}>
       <Box
         sx={{
-          position: "relative",
-          overflow: "hidden",
-          borderRadius: 2,
-          boxShadow: "0 8px 16px rgba(0,0,0,0.1)",
-          transition: "all 0.3s ease",
-          "&:hover": {
-            transform: "translateY(-5px)",
-            boxShadow: "0 12px 24px rgba(0,0,0,0.2)",
-            "& .overlay": {
-              opacity: 1,
-            },
-            "& .hover-content": {
-              transform: "translate(-50%, -50%)",
-              opacity: 1,
-            },
-            "& .certificate-image": {
-              filter: "contrast(1.05) brightness(1) saturate(1.1)",
-            },
-          },
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: 4,
         }}
       >
-        {/* Image */}
-        <Box sx={{ position: "relative" }}>
-          <img
-            src={ImgSertif}
-            alt="Certificate"
-            className="certificate-image"
-            style={{
-              width: "100%",
-              height: "auto",
-              display: "block",
-              objectFit: "cover",
-              filter: "contrast(1.10) brightness(0.9) saturate(1.1)",
-              transition: "filter 0.3s ease",
-              cursor: "pointer",
-            }}
-            onClick={handleOpen}
-          />
-        </Box>
-
-        {/* Hover Overlay */}
-        <Box
-          className="overlay"
-          onClick={handleOpen}
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            opacity: 0,
-            transition: "all 0.3s ease",
-            cursor: "pointer",
-            zIndex: 2,
-          }}
-        >
-          {/* Hover Content */}
+        {CertificatesData.map((cert) => (
           <Box
-            className="hover-content"
+            key={cert.id}
             sx={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -60%)",
-              opacity: 0,
-              transition: "all 0.4s ease",
-              textAlign: "center",
-              width: "100%",
-              color: "white",
+              position: "relative",
+              overflow: "hidden",
+              borderRadius: 2,
+              boxShadow: "0 8px 16px rgba(0,0,0,0.2)",
+              transition: "all 0.3s ease",
+              width: "300px",
+              "&:hover": {
+                transform: "translateY(-5px)",
+                boxShadow: "0 12px 24px rgba(0,0,0,0.3)",
+                "& .overlay": { opacity: 1 },
+              },
             }}
           >
-            <FullscreenIcon
-              sx={{
-                fontSize: 40,
-                mb: 1,
-                filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
+            <img
+              src={cert.image}
+              alt={cert.title}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "8px",
+                cursor: "pointer",
               }}
+              onClick={() => handleOpen(cert.image)}
             />
-            <Typography
-              variant="h6"
+
+            {/* Hover overlay */}
+            <Box
+              className="overlay"
               sx={{
-                fontWeight: 600,
-                textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                opacity: 0,
+                transition: "all 0.3s ease",
+                background: "rgba(0,0,0,0.5)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "white",
+                cursor: "pointer",
               }}
+              onClick={() => handleOpen(cert.image)}
             >
-              View Certificate
-            </Typography>
+              <FullscreenIcon sx={{ fontSize: 40, mr: 1 }} />
+              <Typography variant="h6">View Certificate</Typography>
+            </Box>
           </Box>
-        </Box>
+        ))}
       </Box>
 
-      {/* Modal View */}
+      {/* Modal */}
       <Modal
         open={open}
         onClose={handleClose}
-        aria-labelledby="certificate-modal"
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 300,
           sx: {
-            backgroundColor: "rgba(0, 0, 0, 0.9)",
+            backgroundColor: "rgba(0,0,0,0.9)",
             backdropFilter: "blur(5px)",
           },
-        }}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
         }}
       >
         <Box
@@ -137,10 +107,10 @@ const Certificate = ({ ImgSertif }) => {
             width: "auto",
             maxWidth: "90vw",
             maxHeight: "90vh",
+            margin: "auto",
             outline: "none",
           }}
         >
-          {/* Close Button */}
           <IconButton
             onClick={handleClose}
             sx={{
@@ -149,19 +119,14 @@ const Certificate = ({ ImgSertif }) => {
               right: 16,
               color: "white",
               bgcolor: "rgba(0,0,0,0.6)",
-              zIndex: 1,
-              "&:hover": {
-                bgcolor: "rgba(0,0,0,0.8)",
-                transform: "scale(1.1)",
-              },
+              "&:hover": { bgcolor: "rgba(0,0,0,0.8)" },
             }}
           >
             <CloseIcon />
           </IconButton>
 
-          {/* Full Image */}
           <img
-            src={ImgSertif}
+            src={selectedImage}
             alt="Certificate Full View"
             style={{
               display: "block",
@@ -169,6 +134,7 @@ const Certificate = ({ ImgSertif }) => {
               maxHeight: "90vh",
               margin: "0 auto",
               objectFit: "contain",
+              borderRadius: "10px",
             }}
           />
         </Box>

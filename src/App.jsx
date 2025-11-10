@@ -8,7 +8,7 @@ import AnimatedBackground from "./components/Background";
 import Navbar from "./components/Navbar";
 import Portofolio from "./Pages/Portofolio";
 import ContactPage from "./Pages/Contact";
-import ProjectDetails from "./components/ProjectDetail";
+import ProjectDetail from "./components/ProjectDetail";
 import WelcomeScreen from "./Pages/WelcomeScreen";
 import NotFoundPage from "./Pages/404";
 
@@ -51,7 +51,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
 
 const ProjectPageLayout = () => (
   <>
-    <ProjectDetails />
+    <ProjectDetail />
     <footer>
       <center>
         <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
