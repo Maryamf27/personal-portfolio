@@ -85,6 +85,8 @@ const techStacks = [
   { icon: "mongodb.svg", language: "MongoDB" },
   { icon: "MUI.svg", language: "Material UI" },
   { icon: "vercel.svg", language: "Vercel" },
+  { icon: "typescript.svg", language: "TypeScript" },
+  { icon: "nextjs.svg", language: "Next JS" },
   { icon: "Express.svg", language: "Express JS" },
 ];
 
