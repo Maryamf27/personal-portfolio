@@ -62,8 +62,8 @@ const CTAButton = memo(({ href, text, icon: Icon }) => (
           </span>
           <Icon
             className={`w-4 h-4 text-gray-200 ${text === "Contact"
-                ? "group-hover:translate-x-1"
-                : "group-hover:rotate-45"
+              ? "group-hover:translate-x-1"
+              : "group-hover:rotate-45"
               } transform transition-all duration-300 z-10`}
           />
         </span>
@@ -157,8 +157,8 @@ const Home = () => {
     },
     style: { width: "100%", height: "100%" },
     className: `w-full h-full transition-all duration-500 ${isHovering
-        ? "scale-[180%] sm:scale-[160%] md:scale-[150%] lg:scale-[145%] rotate-2"
-        : "scale-[175%] sm:scale-[155%] md:scale-[145%] lg:scale-[140%]"
+      ? "scale-[180%] sm:scale-[160%] md:scale-[150%] lg:scale-[145%] rotate-2"
+      : "scale-[175%] sm:scale-[155%] md:scale-[145%] lg:scale-[140%]"
       }`,
   };
 
@@ -262,10 +262,15 @@ const Home = () => {
                 ></div>
 
                 <div
-                  className={`relative lg:left-12 z-10 w-full opacity-90 transform transition-transform duration-500 ${isHovering ? "scale-105" : "scale-100"
+                  className={`relative lg:left-12 z-10 w-full opacity-90 transform transition-transform duration-500  ${isHovering ? "scale-105" : "scale-100"
                     }`}
                 >
-                  <DotLottieReact {...lottieOptions} />
+                  <DotLottieReact
+                    src="https://lottie.host/2e60142d-b4e6-4250-9ead-1cd6ba8fe721/myPD9LBICW.lottie"
+                    loop
+                    autoplay
+                    className=" sm:h-[450px] sm:w-[450px] md:h-[400px] md:w-[400px] lg:h-[450px] lg:w-[450px]"
+                  />
                 </div>
 
                 <div
