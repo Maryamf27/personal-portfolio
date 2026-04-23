@@ -30,7 +30,7 @@ const MainTitle = memo(() => (
       <span className="relative inline-block">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-white via-blue-100   to-purple-200 bg-clip-text text-transparent">
-          Mern Stack
+          Full Stack
         </span>
       </span>
       <br />
@@ -87,8 +87,8 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Mern Stack Developer", "CS Student"];
-const TECH_STACK = ["React", "JavaScript", "Node.js", "Tailwind"];
+const WORDS = ["Mern Stack Developer", "CS Student", "Full Stack Engineer"];
+const TECH_STACK = ["Reactjs", "Nextjs", "Typescript", "Expressjs", "Node.js", "TailwindCSS", "MongoDB", "Socket.io"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/Maryamf27" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/maryam-fatima-8a1bab2b0/" },
@@ -201,10 +201,8 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-delay="1000"
                 >
-                  My name is Maryam Fatima, a Mern stack developer currently pursuing
-                  my Bachelor in Computer Science from university
-                  of Education. I’m in my third year and deeply
-                  passionate about exploring new technologies. I enjoy building
+                  My name is Maryam Fatima, Full Stack developer currently pursuing
+                  my Bachelor in Computer Science from Islamia University. I’m in my third year and deeply passionate about exploring new technologies. I enjoy building
                   clean, responsive, and user-friendly websites to solve
                   real-world problems.
                 </p>

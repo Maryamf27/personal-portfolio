@@ -6,15 +6,15 @@ import 'aos/dist/aos.css';
 const Header = memo(() => (
   <div className="text-center lg:mb-8 mb-2 px-[5%]">
     <div className="inline-block relative group">
-      <h2 
-        className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]" 
+      <h2
+        className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]"
         data-aos="zoom-in-up"
         data-aos-duration="600"
       >
         About Me
       </h2>
     </div>
-    <p 
+    <p
       className="mt-2 text-gray-400 max-w-2xl mx-auto text-base sm:text-lg flex items-center justify-center gap-2"
       data-aos="zoom-in-up"
       data-aos-duration="800"
@@ -40,7 +40,7 @@ const ProfileImage = memo(() => (
           <div className="absolute inset-0 border-4 border-white/20 rounded-full z-20 transition-all duration-700 group-hover:border-white/40 group-hover:scale-105" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0 hidden sm:block" />
           <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
-          
+
           <img
             src="/mimi.png"
             alt="Profile"
@@ -57,12 +57,12 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
   <div data-aos={animation} data-aos-duration={1300} className="relative group">
     <div className="relative z-10 bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-white/10 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
       <div className={`absolute -z-10 inset-0 bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
-      
+
       <div className="flex items-center justify-between mb-4">
         <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white/10 transition-transform group-hover:rotate-6">
           <Icon className="w-8 h-8 text-white" />
         </div>
-        <span 
+        <span
           className="text-4xl font-bold text-white"
           data-aos="fade-up-left"
           data-aos-duration="1500"
@@ -85,8 +85,8 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
 const AboutPage = () => {
   const { totalProjects, totalCertificates, YearExperience } = useMemo(() => {
     return {
-      totalProjects: 6,
-      totalCertificates: 1,
+      totalProjects: 7,
+      totalCertificates: 2,
       YearExperience: 0,
     };
   }, []);
@@ -152,7 +152,7 @@ const AboutPage = () => {
             </h2>
 
             <p className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0" data-aos="fade-right" data-aos-duration="1500">
-              I am a passionate mern stack developer currently pursuing a Bachelor of Technology in Computer Science  at university of Education. I love diving into modern technologies, solving real-world problems, and constantly learning new skills to build user-centric web experiences.
+              I am Full stack Engineer currently pursuing a Bachelors in Computer Science  at Islamia University. I love diving into modern technologies,AI,solving real-world problems, and constantly learning new skills to build user-centric web experiences.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-4">
