@@ -256,7 +256,7 @@ export default function FullWidthTabs() {
               <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
                 {displayedCertificates.map((certificate, index) => (
                   <div key={certificate.id || index} data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"} data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                    <Certificate ImgSertif={certificate.Img} />
+                    <Certificate image={certificate.image || certificate.Img || certificate.img} />
                   </div>
                 ))}
               </div>
